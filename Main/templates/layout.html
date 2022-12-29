@@ -5,18 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnoCHAT - Anonimowy chat</title>
+    <title>AnonCHAT - Anonimowy chat</title>
     <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="Anonimowy czat online, chat online, anonimowy, chat, obcy, darmowy, chat">
+    <meta name="description" content="Anonimowy chat online umożliwiający rozmowy z losowymi użytkownikami, poznaj ciekawych ludzi oraz poznaj ich pasje.">
+    <meta name="author" content="Mateusz Zębala">
     <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1MJFBM76M1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1MJFBM76M1');
+    </script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
     {% block head %}{% endblock %}
 </head>
 <body>
     {% block navbar %}{% include 'bricks/navbar.html' %}{% endblock %}
     <section class="main">{% block main %}{% endblock %}</section>
-    <footer>
-        
-    </footer>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     {% block scripts %}{% endblock %}
 </body>
