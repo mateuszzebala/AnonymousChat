@@ -32,6 +32,12 @@ def message(request):
     chat = Chat.objects.filter(Q(user1=request.anon) | Q(user2=request.anon)).first()
     data = json.loads(request.body.decode("utf-8"))
     text = data.get('text')
+    if chat.user1 == request.anon:
+        chat.user1_typeing = False
+    elif chat.user2 == request.anon:
+        chat.user2_typeing = False
+    chat.save()
+    
     if text != "" and text is not None and chat is not None and chat.is_connected():
         text = Text(user=request.anon, chat=chat, content=text)
         text.save()
@@ -43,10 +49,13 @@ def messages(request):
     if chat is None:
         return JsonResponse({})
     texts = Text.objects.filter(chat=chat)
-    txts = {}
+    txts = {
+        'typeing': chat.user1_typeing if chat.user2 == request.anon else chat.user2_typeing,
+        'messages': dict()
+    }
     i = 0
     for txt in texts:
-        txts[i] = {"from":1 if txt.user == request.anon else 0, "text":txt.content}
+        txts['messages'][i] = {"from":1 if txt.user == request.anon else 0, "text":txt.content}
         i += 1
     return JsonResponse(txts)
 
@@ -86,3 +95,24 @@ def chat_info(request):
     return JsonResponse({
         "two_users": chat.is_connected()
     })
+
+
+def typeing(request):
+    chat = Chat.objects.filter(Q(user1=request.anon) | Q(user2=request.anon)).first()
+    if chat.user1 == request.anon:
+        chat.user1_typeing = True
+    else:
+        chat.user2_typeing = True
+    chat.save()
+
+    return JsonResponse({})
+
+def not_typeing(request):
+    chat = Chat.objects.filter(Q(user1=request.anon) | Q(user2=request.anon)).first()
+    if chat.user1 == request.anon:
+        chat.user1_typeing = False
+    else:
+        chat.user2_typeing = False
+    chat.save()
+
+    return JsonResponse({})

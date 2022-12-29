@@ -1,5 +1,5 @@
 {% extends 'layout.html' %}
-
+{% load tags %}
 
 {% block head %}
 
@@ -9,6 +9,8 @@
 {% block main %}
     <div class="index">
         <h1>AnoCHAT</h1>
-        <p>Anonimowy chat bez cenzury</p>
+        <p>Anonimowy chat</p>
+        <p>Online: {% number_of_active_users %}</p>
+        <a href="{% url 'chat' %}">START</a>
     </div>
 {% endblock %}

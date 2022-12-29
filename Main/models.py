@@ -13,6 +13,8 @@ class AnonymousUser(models.Model):
 class Chat(models.Model):
     user1 = models.ForeignKey(AnonymousUser, on_delete=models.SET_NULL, null=True, blank=True, related_name="user1")
     user2 = models.ForeignKey(AnonymousUser, on_delete=models.SET_NULL, null=True, blank=True, related_name="user2")
+    user1_typeing = models.BooleanField(default=False)
+    user2_typeing = models.BooleanField(default=False)
     datetime = models.DateTimeField(auto_now_add=True, null=True)
     disconnected = models.BooleanField(default=False)
     

@@ -9,4 +9,6 @@ urlpatterns = [
     path('next_chat/', views.next_chat, name='next_chat'),
     path('chat_info/', views.chat_info, name='chat_info'),
     path('disconnect/', views.disconnect, name='disconnect'),
+    path('typeing/on/', views.typeing, name="typeing-on"),
+    path('typeing/off/', views.not_typeing, name="typeing-off"),
 ]
