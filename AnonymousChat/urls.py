@@ -6,6 +6,6 @@ from django.contrib.staticfiles.views import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('Main.urls')),
     re_path(r'^static/(?P<path>.*)$', serve, {"document_root": settings.STATIC_ROOT}),
+    path('', include('Main.urls')),
 ]
