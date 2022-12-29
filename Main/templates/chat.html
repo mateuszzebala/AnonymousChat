@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block main %}
+    <div class="chat">
+        <div class="lds-dual-ring loading"></div>
+        <div class="texts">
+
+        </div>
+        <p class="disconnected">Rozłączono</p>
+        <form action="#" method="POST">
+            <button class="exit" type="button" id="next_chat"><i class="fa-solid fa-xmark"></i></button>
+            <input id="message" type="text" placeholder="Wpisz ...">
+            <button type="submit" id="send_message"><i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+    </div>
+{% endblock %}
+
+
+{% block scripts %}
+    <script src="{% static 'js/chat.js' %}"></script>
+{% endblock %}

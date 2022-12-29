@@ -1,0 +1,12 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('chat/', views.chat, name='chat'),
+    path('message/', views.message, name='message'),
+    path('messages/', views.messages, name='messages'),
+    path('next_chat/', views.next_chat, name='next_chat'),
+    path('chat_info/', views.chat_info, name='chat_info'),
+    path('disconnect/', views.disconnect, name='disconnect'),
+]
