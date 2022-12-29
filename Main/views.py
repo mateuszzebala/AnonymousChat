@@ -1,8 +1,9 @@
 from django.shortcuts import render
 import json
-from django.http import JsonResponse
+from django.http import JsonResponse, FileResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import Chat, AnonymousUser, Text
+
 from django.db.models import Q
 
 def index(request):
@@ -116,3 +117,10 @@ def not_typeing(request):
     chat.save()
 
     return JsonResponse({})
+
+
+def favicon(request):
+    return FileResponse(open("static/img/favicon.ico", "rb"))
+
+def map(request):
+    return FileResponse(open('static/map.xml'))

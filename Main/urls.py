@@ -11,4 +11,6 @@ urlpatterns = [
     path('disconnect/', views.disconnect, name='disconnect'),
     path('typeing/on/', views.typeing, name="typeing-on"),
     path('typeing/off/', views.not_typeing, name="typeing-off"),
+    path('favicon.ico', views.favicon, name="favicon"),
+    path('map', views.map, name="map"),
 ]
