@@ -157,3 +157,7 @@ def favicon(request):
 
 def map(request):
     return FileResponse(open('static/map.xml'))
+
+
+def error404(request):
+    return render(request, "404.html", {})

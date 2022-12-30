@@ -17,4 +17,5 @@ urlpatterns = [
     path('typeing/off/', views.not_typeing, name="typeing-off"),
     path('favicon.ico', views.favicon, name="favicon"),
     path('map', views.map, name="map"),
+    
 ]
