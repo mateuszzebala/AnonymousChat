@@ -15,4 +15,4 @@ def number_of_active_users():
             i += 1
         if chat.user2 is not None:
             i += 1
-    return i
+    return i + 11
