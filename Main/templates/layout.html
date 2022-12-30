@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnonCHAT - Anonimowy chat</title>
     <link rel="stylesheet" href="{% static 'css/layout.css' %}">
     <meta name="robots" content="index, follow">
     <meta name="keywords" content="Anonimowy czat online, chat online, anonimowy, chat, obcy, darmowy, chat">
@@ -22,7 +21,9 @@
     gtag('config', 'G-1MJFBM76M1');
     </script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
-    {% block head %}{% endblock %}
+    {% block head %}
+    <title>AnonCHAT - Anonimowy chat</title>
+    {% endblock %}
 </head>
 <body>
     {% block navbar %}{% include 'bricks/navbar.html' %}{% endblock %}

@@ -1,14 +1,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://anonchat.pl/</loc>
-<lastmod>2022-12-29</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://anonchat.pl/chat</loc>
-<lastmod>2022-12-29</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
+    <url>
+        <loc>https://anonchat.pl/</loc>
+        <lastmod>2022-12-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>https://anonchat.pl/chat</loc>
+        <lastmod>2022-12-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>https://anonchat.pl/login</loc>
+        <lastmod>2022-12-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>https://anonchat.pl/register</loc>
+        <lastmod>2022-12-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1</priority>
+    </url>
 </urlset>
