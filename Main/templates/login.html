@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% load tags %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block main %}
+    <div class="login-page">
+        <form action="" method="POST">
+            <h1>Zaloguj się</h1>
+            <input type="text" name="username" placeholder="Nazwa">
+            <input type="password" name="password" placeholder="Hasło">
+            {% csrf_token %}
+            <button type="submit">Zaloguj</button>
+            <a href="{% url 'register' %}">Nie masz konta?</a>
+            {% if bad %}
+                <span>Złe dane</span>
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

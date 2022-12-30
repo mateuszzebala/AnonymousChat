@@ -2,7 +2,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^*asiu9)#h65_3t&dc3m7@uk0oy5+1_-l6tl(+&pj-kcp2!gj7'
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['localhost', 'anonchat.pl']
 
 INSTALLED_APPS = [

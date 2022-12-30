@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import json
 from django.http import JsonResponse, FileResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth import login as login_user, authenticate, logout as logout_user
 from .models import Chat, AnonymousUser, Text
-
 from django.db.models import Q
+from django.contrib.auth.models import User
 
 def index(request):
     return render(request, "index.html", {})
@@ -27,6 +28,38 @@ def chat(request):
     if chat is None:
         chat = new_chat(request)
     return render(request, "chat.html", {})
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login_user(request, user)
+            return redirect('index')
+        else:
+            return render(request, "login.html", {"bad":True})
+        
+        
+    return render(request, "login.html", {})
+
+
+def register(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        email = request.POST.get('email')
+        user = User(username=username, email=email, password=password)
+        user.save()
+        return redirect('login')
+        
+    return render(request, "register.html", {
+        
+    })
+
+def logout(request):
+    logout_user(request)
+    return redirect('index')
 
 @csrf_exempt
 def message(request):

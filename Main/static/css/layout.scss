@@ -13,12 +13,20 @@ body {
     a, select, textarea, input, button, option{
         font-family: var(--font-family);
     }
+    *::selection{
+        background-color: rgb(166, 0, 255);
+    }
+    &::-webkit-scrollbar{
+        height: 0px;
+        width: 0px;
+    }
 
     >nav.navbar {
         display: flex;
         justify-content: space-between;
         padding: 10px 30px;
         padding: 20px;
+        gap: 40px;
         div{
             display: flex;
             gap: 40px;
@@ -26,6 +34,7 @@ body {
         a, span{
             color: white;
             text-decoration: none;
+            white-space: nowrap;
             font-size: 20px;
         }
 
@@ -69,7 +78,7 @@ body {
             padding: 0 20px;
             margin: 0;
             border-radius: 5px;
-            
+            text-decoration: none;
             background-clip: unset;
             &:after{
                 content: '';
@@ -85,6 +94,41 @@ body {
         }
         p{
             font-size: max(calc(100vw / 56), 15px);
+        }
+    }
+
+    .login-page{
+        padding: 30px;
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            font-size: x-large;
+            input, button{
+                font-size: x-large;
+                transition: color 0.3s, background 0.3s;
+                border-radius: 5px;
+                text-align: center;
+                background-color: transparent;
+                color: white;
+                border: 3px solid white;
+                padding: 5px 10px;
+                &:focus{
+                    outline: none;
+                }
+            }
+            button:hover{
+                background-color: white;
+                color: #212529;
+                cursor: pointer;
+            }
+            h1{
+                margin: 0;
+            }
+            a{
+                color: white;
+            }
         }
     }
 
@@ -262,5 +306,12 @@ body {
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+
+@media (max-width: 580px) {
+    .navbar .register{
+        display: none;
     }
 }
